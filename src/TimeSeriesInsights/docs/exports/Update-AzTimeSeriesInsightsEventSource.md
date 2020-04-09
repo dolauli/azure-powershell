@@ -1,63 +1,43 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/get-aztimeseriesinsightseventsource
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightseventsource
 schema: 2.0.0
 ---
 
-# Get-AzTimeSeriesInsightsEventSource
+# Update-AzTimeSeriesInsightsEventSource
 
 ## SYNOPSIS
-Gets the event source with the specified name in the specified environment.
+Updates the event source with the specified name in the specified subscription, resource group, and environment.
 
 ## SYNTAX
 
-### List (Default)
+### UpdateExpanded (Default)
 ```
-Get-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzTimeSeriesInsightsEventSource -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
+Update-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
+### UpdateViaIdentityExpanded
+```
+Update-AzTimeSeriesInsightsEventSource -InputObject <ITimeSeriesInsightsIdentity> [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Gets the event source with the specified name in the specified environment.
+Updates the event source with the specified name in the specified subscription, resource group, and environment.
 
 ## EXAMPLES
 
-### Example 1: List all event sources under the specified environment
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Get-AzTimeSeriesInsightsEventSource -ResourceGroupName testgroup -EnvironmentName tsitest001
-
-ConsumerGroupName     : testgroup2
-EventHubName          : hubname001
-EventSourceResourceId : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup2/providers/Microsoft.EventHub/namespaces/spacename001/eventhubs/hu 
-                        bname001
-Id                    : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest001/eve 
-                        ntsources/estest001
-KeyName               : RootManageSharedAccessKey
-Kind                  : Microsoft.EventHub
-Location              : eastus
-Name                  : estest001
-ServiceBusNamespace   : spacename001
-Tag                   : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
-TimestampPropertyName :
-Type                  : Microsoft.TimeSeriesInsights/Environments/EventSources
+Update-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -Name iots001 -ResourceGroupName testgroup -Tag @{"tgk"="001"}
+```
 
 ConsumerGroupName     : testgroup2
 EventSourceResourceId : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup2/providers/Microsoft.Devices/IotHubs/iotname001
-Id                    : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest001/eve 
-                        ntsources/iots001
+Id                    : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest001/eventsources/iots001
 IotHubName            : iotname001
 KeyName               : RootManageSharedAccessKey
 Kind                  : Microsoft.IoTHub
@@ -66,18 +46,17 @@ Name                  : iots001
 Tag                   : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 TimestampPropertyName :
 Type                  : Microsoft.TimeSeriesInsights/Environments/EventSources
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+$es = Get-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -ResourceGroupName testgroup -Name iots001
 ```
 
-This command lists all event sources under the specified environments.
-
-### Example 2: Get a specified event source
-```powershell
-PS C:\> et-AzTimeSeriesInsightsEventSource -ResourceGroupName testgroup -EnvironmentName tsitest001 -Name iots001
+PS C:\\> Update-AzTimeSeriesInsightsEventSource -InputObject -Tag @{"tgb"="002"}
 
 ConsumerGroupName     : testgroup2
 EventSourceResourceId : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup2/providers/Microsoft.Devices/IotHubs/iotname001
-Id                    : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest001/eve
-                        ntsources/iots001
+Id                    : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest001/eventsources/iots001
 IotHubName            : iotname001
 KeyName               : RootManageSharedAccessKey
 Kind                  : Microsoft.IoTHub
@@ -86,9 +65,6 @@ Name                  : iots001
 Tag                   : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 TimestampPropertyName :
 Type                  : Microsoft.TimeSeriesInsights/Environments/EventSources
-```
-
-This command gets a specific event source.
 
 ## PARAMETERS
 
@@ -113,7 +89,7 @@ The name of the Time Series Insights environment associated with the specified r
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -130,7 +106,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -146,7 +122,7 @@ The name of the Time Series Insights event source associated with the specified 
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: UpdateExpanded
 Aliases: EventSourceName
 
 Required: True
@@ -162,7 +138,7 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -177,13 +153,62 @@ Dynamic: False
 Azure Subscription ID.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: Get, List
+Type: System.String
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Tag
+Key-value pairs of additional properties for the event source.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False

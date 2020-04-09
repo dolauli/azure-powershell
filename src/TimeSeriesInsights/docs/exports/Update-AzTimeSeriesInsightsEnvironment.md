@@ -33,9 +33,10 @@ Updates the environment with the specified name in the specified subscription an
 
 ## EXAMPLES
 
-### Example 1: Update a standard time series insights environment
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Update-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001 -Capacity 5 -Sku S1
+Update-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001 -Capacity 5 -Sku S1
+```
 
 DataAccessFqdn               : b6d113a4-0865-405f-b09e-ad4355b5d046.env.timeseries.azure.com
 DataAccessId                 : b6d113a4-0865-405f-b09e-ad4355b5d046
@@ -58,18 +59,35 @@ StateDetailMessage           :
 StorageLimitExceededBehavior : PurgeOldData
 Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 Type                         : Microsoft.TimeSeriesInsights/Environments
-```
 
-This command updates a standard time series insights environment.
-
-### Example 2: {{ Api definition for update a longterm environment is missing in swagger and should be added in the future}}
+### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+$env = Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001
 ```
 
-{{ Add description here }}
+PS C:\\> PS C:\\> Update-AzTimeSeriesInsightsEnvironment -InputObject $env -Capacity 6 -Sku S1
+
+DataAccessFqdn               : b6d113a4-0865-405f-b09e-ad4355b5d046.env.timeseries.azure.com
+DataAccessId                 : b6d113a4-0865-405f-b09e-ad4355b5d046
+DataRetentionTime            : 1.01:25:00
+Id                           : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/testgroup/providers/Microsoft.TimeSeriesInsights/environments/tsitest 
+                               001
+IngressState                 :
+Kind                         : Standard
+Location                     : eastus
+Name                         : tsitest001
+PartitionKeyProperty         :
+PropertyUsageState           :
+Sku                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.Sku
+SkuCapacity                  : 6
+SkuName                      : S1
+StateDetailCode              :
+StateDetailCurrentCount      :
+StateDetailMaxCount          :
+StateDetailMessage           :
+StorageLimitExceededBehavior : PurgeOldData
+Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
+Type                         : Microsoft.TimeSeriesInsights/Environments
 
 ## PARAMETERS
 

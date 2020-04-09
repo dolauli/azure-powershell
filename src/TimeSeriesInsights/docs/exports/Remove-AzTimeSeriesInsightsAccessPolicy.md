@@ -1,62 +1,47 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/get-aztimeseriesinsightsreferencedataset
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsaccesspolicy
 schema: 2.0.0
 ---
 
-# Get-AzTimeSeriesInsightsReferenceDataSet
+# Remove-AzTimeSeriesInsightsAccessPolicy
 
 ## SYNOPSIS
-Gets the reference data set with the specified name in the specified environment.
+Deletes the access policy with the specified name in the specified subscription, resource group, and environment
 
 ## SYNTAX
 
-### List (Default)
+### Delete (Default)
 ```
-Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### DeleteViaIdentity
 ```
-Get-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity>
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+Remove-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the reference data set with the specified name in the specified environment.
+Deletes the access policy with the specified name in the specified subscription, resource group, and environment
 
 ## EXAMPLES
 
-### Example 1: List all reference data sets under the specified environment
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup
-
-Location Name      Type
--------- ----      ----
-eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
-eastus   dstest002 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
 ```
 
-This command lists all reference data sets under the specified environment.
 
-### Get a specified reference data set
+
+### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-PS C:\> Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup -ReferenceDataSetName dstest001
-
-Location Name      Type
--------- ----      ----
-eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+$policy = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
 ```
 
-This command gets a specified reference data set.
+PS C:\\> Remove-AzTimeSeriesInsightsAccessPolicy -InputObject $policy
 
 ## PARAMETERS
 
@@ -81,7 +66,7 @@ The name of the Time Series Insights environment associated with the specified r
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -98,7 +83,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -110,14 +95,30 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights reference data set associated with the specified environment.
+The name of the Time Series Insights access policy associated with the specified environment.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: ReferenceDataSetName
+Parameter Sets: Delete
+Aliases: AccessPolicyName
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -130,7 +131,7 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -145,13 +146,46 @@ Dynamic: False
 Azure Subscription ID.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: Get, List
+Type: System.String
+Parameter Sets: Delete
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False
@@ -166,7 +200,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IReferenceDataSetResource
+### System.Boolean
 
 ## ALIASES
 

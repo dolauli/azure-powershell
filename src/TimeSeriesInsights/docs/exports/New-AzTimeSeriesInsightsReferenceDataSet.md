@@ -24,17 +24,16 @@ Create or update a reference data set in the specified environment.
 
 ## EXAMPLES
 
-### Example 1: Create a reference data set for a specified environment  
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> $mykeyproperties = @{ "name" = "device01"; "type" = "Double"}
-PS C:\> New-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Location eastus -DataStringComparisonBehavior Ordinal -KeyProperty $mykeyproperties
+$mykeyproperties = @{ "name" = "device01"; "type" = "Double"}
+```
+
+PS C:\\> New-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Location eastus -DataStringComparisonBehavior Ordinal -KeyProperty $mykeyproperties
 
 Location Name      Type
 -------- ----      ----
 eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
-```
-
-This command creates a reference data set for a specific environment.
 
 ## PARAMETERS
 

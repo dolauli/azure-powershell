@@ -41,9 +41,10 @@ Gets the environment with the specified name in the specified subscription and r
 
 ## EXAMPLES
 
-### Example 1: Get a time series insights environment
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001
+Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001
+```
 
 DataAccessFqdn               : b6d113a4-0865-405f-b09e-ad4355b5d046.env.timeseries.azure.com
 DataAccessId                 : b6d113a4-0865-405f-b09e-ad4355b5d046
@@ -66,13 +67,11 @@ StateDetailMessage           :
 StorageLimitExceededBehavior : PurgeOldData
 Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 Type                         : Microsoft.TimeSeriesInsights/Environments
-```
 
-This command gets a time series insights environment.
-
-### Example 2: List all time series insights environments
+### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-PS C:\> Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup
+Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup
+```
 
 DataAccessFqdn                      : 3de1d1e1-4f9b-4bc6-aad3-a835597dcd86.env.timeseries.azure.com
 DataAccessId                        : 3de1d1e1-4f9b-4bc6-aad3-a835597dcd86
@@ -117,9 +116,34 @@ StateDetailMessage           :
 StorageLimitExceededBehavior : PurgeOldData
 Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 Type                         : Microsoft.TimeSeriesInsights/Environments
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+$env = Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName tsi-test-i01k5l -EnvironmentName tsi-envv8u56x
 ```
 
-This command lists all time series insights environments in a resource group.
+PS C:\\> Get-AzTimeSeriesInsightsEnvironment -InputObject $env
+
+DataAccessFqdn               : d76a61f2-8a30-41a5-9587-f241eb9b48d9.env.timeseries.azure.com
+DataAccessId                 : d76a61f2-8a30-41a5-9587-f241eb9b48d9
+DataRetentionTime            : 1.01:25:00
+Id                           : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/tsi-test-i01k5l/providers/Microsoft.TimeSeriesInsights/environments/tsi-envv8u56x
+IngressState                 :
+Kind                         : Standard
+Location                     : eastus2
+Name                         : tsi-envv8u56x
+PartitionKeyProperty         :
+PropertyUsageState           :
+Sku                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.Sku
+SkuCapacity                  : 1
+SkuName                      : S1
+StateDetailCode              :
+StateDetailCurrentCount      :
+StateDetailMaxCount          :
+StateDetailMessage           :
+StorageLimitExceededBehavior : PurgeOldData
+Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
+Type                         : Microsoft.TimeSeriesInsights/Environments
 
 ## PARAMETERS
 

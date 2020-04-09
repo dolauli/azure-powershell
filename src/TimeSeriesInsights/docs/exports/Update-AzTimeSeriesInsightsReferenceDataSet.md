@@ -1,41 +1,54 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsenvironment
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsreferencedataset
 schema: 2.0.0
 ---
 
-# Remove-AzTimeSeriesInsightsEnvironment
+# Update-AzTimeSeriesInsightsReferenceDataSet
 
 ## SYNOPSIS
-Deletes the environment with the specified name in the specified subscription and resource group.
+Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded (Default)
 ```
-Remove-AzTimeSeriesInsightsEnvironment -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### UpdateViaIdentityExpanded
 ```
-Remove-AzTimeSeriesInsightsEnvironment -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity> [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes the environment with the specified name in the specified subscription and resource group.
+Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
 
 ## EXAMPLES
 
-### Example 1: Remove a time series insights environment
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Remove-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsill
-
+Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Tag @{"tstg"="lb001"}
 ```
 
-This command removes a time series insights environment.
+Location Name      Type
+-------- ----      ----
+eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+$ds = Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup -ReferenceDataSetName dstest001
+```
+
+PS C:\\> Update-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds -Tag @{"tstg"="lb001"}
+
+Location Name      Type
+-------- ----      ----
+eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
 
 ## PARAMETERS
 
@@ -55,13 +68,29 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
+### -EnvironmentName
+The name of the Time Series Insights environment associated with the specified resource group.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -73,30 +102,14 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights environment associated with the specified resource group.
+The name of the Time Series Insights reference data set associated with the specified environment.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: EnvironmentName
+Parameter Sets: UpdateExpanded
+Aliases: ReferenceDataSetName
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -109,7 +122,7 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -125,12 +138,28 @@ Azure Subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Tag
+Key-value pairs of additional properties for the reference data set.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False
@@ -178,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IReferenceDataSetResource
 
 ## ALIASES
 

@@ -30,13 +30,19 @@ Deletes the reference data set with the specified name in the specified subscrip
 
 ## EXAMPLES
 
-### Example 1: Remove a specified reference data set
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Remove-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup
-
+Remove-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup
 ```
 
-This command removes a specified reference data set.
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+$ds = Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup
+```
+
+PS C:\\> Remove-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds
 
 ## PARAMETERS
 

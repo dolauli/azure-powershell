@@ -1,45 +1,69 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsreferencedataset
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/get-aztimeseriesinsightsreferencedataset
 schema: 2.0.0
 ---
 
-# Update-AzTimeSeriesInsightsReferenceDataSet
+# Get-AzTimeSeriesInsightsReferenceDataSet
 
 ## SYNOPSIS
-Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
+Gets the reference data set with the specified name in the specified environment.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### List (Default)
 ```
-Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### Get
 ```
-Update-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity> [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity>
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
+Gets the reference data set with the specified name in the specified environment.
 
 ## EXAMPLES
 
-### Example 1: Update a specified reference data set
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Tag @{"tstg"="lb001"}
+Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup
+```
 
 Location Name      Type
 -------- ----      ----
 eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+eastus   dstest002 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup -ReferenceDataSetName dstest001
 ```
 
-This command updates a specified reference data set.
+Location Name      Type
+-------- ----      ----
+eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+$ds = Get-AzTimeSeriesInsightsReferenceDataSet -ResourceGroupName tsi-test-i01k5l -EnvironmentName tsi-envv8u56x -Name tsirdsqwufij
+```
+
+PS C:\\>Get-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds
+
+Location Name         Type
+-------- ----         ----
+eastus2  tsirdsqwufij Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
 
 ## PARAMETERS
 
@@ -64,7 +88,7 @@ The name of the Time Series Insights environment associated with the specified r
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -81,7 +105,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: UpdateViaIdentityExpanded
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +121,7 @@ The name of the Time Series Insights reference data set associated with the spec
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get
 Aliases: ReferenceDataSetName
 
 Required: True
@@ -113,7 +137,7 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -128,62 +152,13 @@ Dynamic: False
 Azure Subscription ID.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Tag
-Key-value pairs of additional properties for the reference data set.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False
