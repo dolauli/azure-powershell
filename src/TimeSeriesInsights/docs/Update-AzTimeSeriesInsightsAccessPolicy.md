@@ -1,54 +1,57 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsreferencedataset
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsaccesspolicy
 schema: 2.0.0
 ---
 
-# Update-AzTimeSeriesInsightsReferenceDataSet
+# Update-AzTimeSeriesInsightsAccessPolicy
 
 ## SYNOPSIS
-Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
+Updates the access policy with the specified name in the specified subscription, resource group, and environment.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Description <String>] [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity> [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity> [-Description <String>]
+ [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
+Updates the access policy with the specified name in the specified subscription, resource group, and environment.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Update a specified access policy by name
 ```powershell
-Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Tag @{"tstg"="lb001"}
+PS C:\> Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup -Role Contributor,Reader
+
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
 ```
 
-Location Name      Type
--------- ----      ----
-eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+This command updates a specified access policy.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Update a specified access policy by object
 ```powershell
-$ds = Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup -ReferenceDataSetName dstest001
+PS C:\> $policy = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -ResourceGroupName $env.resourceGroup -Name policy001
+PS C:\> Update-AzTimeSeriesInsightsAccessPolicy -InputObject $policy -Role Contributor
+
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
 ```
 
-PS C:\\> Update-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds -Tag @{"tstg"="lb001"}
-
-Location Name      Type
--------- ----      ----
-eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+This command updates a specified access policy.
 
 ## PARAMETERS
 
@@ -59,6 +62,22 @@ The credentials, account, tenant, and subscription used for communication with A
 Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Description
+An description of the access policy.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -102,12 +121,12 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights reference data set associated with the specified environment.
+The name of the Time Series Insights access policy associated with the specified environment.
 
 ```yaml
 Type: System.String
 Parameter Sets: UpdateExpanded
-Aliases: ReferenceDataSetName
+Aliases: AccessPolicyName
 
 Required: True
 Position: Named
@@ -133,6 +152,22 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
+### -Role
+The list of roles the principal is assigned on the environment.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Support.AccessPolicyRole[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
 ### -SubscriptionId
 Azure Subscription ID.
 
@@ -144,22 +179,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Tag
-Key-value pairs of additional properties for the reference data set.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False
@@ -207,7 +226,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IReferenceDataSetResource
+### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IAccessPolicyResource
 
 ## ALIASES
 

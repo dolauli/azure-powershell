@@ -1,47 +1,51 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsaccesspolicy
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsreferencedataset
 schema: 2.0.0
 ---
 
-# Remove-AzTimeSeriesInsightsAccessPolicy
+# Remove-AzTimeSeriesInsightsReferenceDataSet
 
 ## SYNOPSIS
-Deletes the access policy with the specified name in the specified subscription, resource group, and environment
+Deletes the reference data set with the specified name in the specified subscription, resource group, and environment
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity>
+Remove-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity>
  [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes the access policy with the specified name in the specified subscription, resource group, and environment
+Deletes the reference data set with the specified name in the specified subscription, resource group, and environment
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Remove a specified reference data set by name
 ```powershell
-Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
+PS C:\> Remove-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup
+
 ```
 
+This command removes a specified reference data set.
 
-
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Remove a specified reference data set by object
 ```powershell
-$policy = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
+PS C:\> $ds = Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup
+PS C:\> Remove-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds
+
 ```
 
-PS C:\\> Remove-AzTimeSeriesInsightsAccessPolicy -InputObject $policy
+This command removes a specified reference data set.
 
 ## PARAMETERS
 
@@ -95,12 +99,12 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights access policy associated with the specified environment.
+The name of the Time Series Insights reference data set associated with the specified environment.
 
 ```yaml
 Type: System.String
 Parameter Sets: Delete
-Aliases: AccessPolicyName
+Aliases: ReferenceDataSetName
 
 Required: True
 Position: Named

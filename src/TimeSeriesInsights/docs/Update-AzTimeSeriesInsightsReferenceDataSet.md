@@ -1,59 +1,59 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/new-aztimeseriesinsightsreferencedataset
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsreferencedataset
 schema: 2.0.0
 ---
 
-# New-AzTimeSeriesInsightsReferenceDataSet
+# Update-AzTimeSeriesInsightsReferenceDataSet
 
 ## SYNOPSIS
-Create or update a reference data set in the specified environment.
+Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
-New-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- -KeyProperty <IReferenceDataSetKeyProperty[]> -Location <String> [-SubscriptionId <String>]
- [-DataStringComparisonBehavior <DataStringComparisonBehavior>] [-Tag <Hashtable>]
+Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-AzTimeSeriesInsightsReferenceDataSet -InputObject <ITimeSeriesInsightsIdentity> [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create or update a reference data set in the specified environment.
+Updates the reference data set with the specified name in the specified subscription, resource group, and environment.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Update a specified reference data set by name
 ```powershell
-$mykeyproperties = @{ "name" = "device01"; "type" = "Double"}
-```
-
-PS C:\\> New-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Location eastus -DataStringComparisonBehavior Ordinal -KeyProperty $mykeyproperties
+PS C:\> Update-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -Name dstest001 -ResourceGroupName testgroup -Tag @{"tstg"="lb001"}
 
 Location Name      Type
 -------- ----      ----
 eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+```
+
+This command updates a specified reference data set.
+
+### Example 2: Update a specified reference data set by object
+```powershell
+PS C:\> $ds = Get-AzTimeSeriesInsightsReferenceDataSet -EnvironmentName tsitest001 -ResourceGroupName testgroup -ReferenceDataSetName dstest001
+PS C:\> Update-AzTimeSeriesInsightsReferenceDataSet -InputObject $ds -Tag @{"tstg"="lb001"}
+
+Location Name      Type
+-------- ----      ----
+eastus   dstest001 Microsoft.TimeSeriesInsights/Environments/ReferenceDataSets
+```
+
+This command updates a specified reference data set.
 
 ## PARAMETERS
-
-### -DataStringComparisonBehavior
-The reference data set key comparison behavior can be set using this property.
-By default, the value is 'Ordinal' - which means case sensitive key comparison will be performed while joining reference data with events or while adding new reference data.
-When 'OrdinalIgnoreCase' is set, case insensitive comparison will be used.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Support.DataStringComparisonBehavior
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
@@ -76,7 +76,7 @@ The name of the Time Series Insights environment associated with the specified r
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -87,45 +87,29 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -KeyProperty
-The list of key properties for the reference data set.
-To construct, see NOTES section for KEYPROPERTY properties and create a hash table.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IReferenceDataSetKeyProperty[]
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Location
-The location of the resource.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 Dynamic: False
 ```
 
 ### -Name
-Name of the reference data set.
+The name of the Time Series Insights reference data set associated with the specified environment.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases: ReferenceDataSetName
 
 Required: True
@@ -141,7 +125,7 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -157,7 +141,7 @@ Azure Subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -169,7 +153,7 @@ Dynamic: False
 ```
 
 ### -Tag
-Key-value pairs of additional properties for the resource.
+Key-value pairs of additional properties for the reference data set.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -222,6 +206,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IReferenceDataSetResource
@@ -233,9 +219,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-#### KEYPROPERTY <IReferenceDataSetKeyProperty[]>: The list of key properties for the reference data set.
-  - `[Name <String>]`: The name of the key property.
-  - `[Type <ReferenceDataKeyPropertyType?>]`: The type of the key property.
+#### INPUTOBJECT <ITimeSeriesInsightsIdentity>: Identity Parameter
+  - `[AccessPolicyName <String>]`: Name of the access policy.
+  - `[EnvironmentName <String>]`: Name of the environment
+  - `[EventSourceName <String>]`: The name of the Time Series Insights event source associated with the specified environment.
+  - `[Id <String>]`: Resource identity path
+  - `[ReferenceDataSetName <String>]`: Name of the reference data set.
+  - `[ResourceGroupName <String>]`: Name of an Azure Resource group.
+  - `[SubscriptionId <String>]`: Azure Subscription ID.
 
 ## RELATED LINKS
 

@@ -33,10 +33,9 @@ Updates the environment with the specified name in the specified subscription an
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Update a standard time series insights environment
 ```powershell
-Update-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001 -Capacity 5 -Sku S1
-```
+PS C:\> Update-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001 -Capacity 5 -Sku S1
 
 DataAccessFqdn               : b6d113a4-0865-405f-b09e-ad4355b5d046.env.timeseries.azure.com
 DataAccessId                 : b6d113a4-0865-405f-b09e-ad4355b5d046
@@ -59,13 +58,14 @@ StateDetailMessage           :
 StorageLimitExceededBehavior : PurgeOldData
 Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 Type                         : Microsoft.TimeSeriesInsights/Environments
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-$env = Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001
 ```
 
-PS C:\\> PS C:\\> Update-AzTimeSeriesInsightsEnvironment -InputObject $env -Capacity 6 -Sku S1
+This command updates a standard time series insights environment.
+
+### Example 2:  Update a standard time series insights environment
+```powershell
+PS C:\> $env = Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsitest001
+PS C:\> PS C:\> Update-AzTimeSeriesInsightsEnvironment -InputObject $env -Capacity 6 -Sku S1
 
 DataAccessFqdn               : b6d113a4-0865-405f-b09e-ad4355b5d046.env.timeseries.azure.com
 DataAccessId                 : b6d113a4-0865-405f-b09e-ad4355b5d046
@@ -88,6 +88,9 @@ StateDetailMessage           :
 StorageLimitExceededBehavior : PurgeOldData
 Tag                          : Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.TrackedResourceTags
 Type                         : Microsoft.TimeSeriesInsights/Environments
+```
+
+This command updates a standard time series insights environment.
 
 ## PARAMETERS
 
