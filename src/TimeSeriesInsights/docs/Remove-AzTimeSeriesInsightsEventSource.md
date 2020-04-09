@@ -1,47 +1,50 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsenvironment
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightseventsource
 schema: 2.0.0
 ---
 
-# Remove-AzTimeSeriesInsightsEnvironment
+# Remove-AzTimeSeriesInsightsEventSource
 
 ## SYNOPSIS
-Deletes the environment with the specified name in the specified subscription and resource group.
+Deletes the event source with the specified name in the specified subscription, resource group, and environment
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-AzTimeSeriesInsightsEnvironment -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-AzTimeSeriesInsightsEnvironment -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
+Remove-AzTimeSeriesInsightsEventSource -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes the environment with the specified name in the specified subscription and resource group.
+Deletes the event source with the specified name in the specified subscription, resource group, and environment
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Remove a specified event source by name
 ```powershell
-Remove-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsill
+PS C:\> Remove-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -Name iots001 -ResourceGroupName testgroup
+
 ```
 
+This removes a specific event source.
 
-
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Remove a specified event source by object
 ```powershell
-$env = Get-AzTimeSeriesInsightsEnvironment -ResourceGroupName testgroup -Name tsill
+PS C:\> $es = Get-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -ResourceGroupName testgroup -Name iots001
+PS C:\> Remove-AzTimeSeriesInsightsEventSource -InputObject $es
+
 ```
 
-PS C:\\> Remove-AzTimeSeriesInsightsEnvironment -InputObject $env
+This removes a specific event source.
 
 ## PARAMETERS
 
@@ -54,6 +57,22 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -EnvironmentName
+The name of the Time Series Insights environment associated with the specified resource group.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -79,12 +98,12 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights environment associated with the specified resource group.
+The name of the Time Series Insights event source associated with the specified environment.
 
 ```yaml
 Type: System.String
 Parameter Sets: Delete
-Aliases: EnvironmentName
+Aliases: EventSourceName
 
 Required: True
 Position: Named

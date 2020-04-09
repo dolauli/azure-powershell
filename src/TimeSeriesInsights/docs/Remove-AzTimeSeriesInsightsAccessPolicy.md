@@ -1,47 +1,50 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightseventsource
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightsaccesspolicy
 schema: 2.0.0
 ---
 
-# Remove-AzTimeSeriesInsightsEventSource
+# Remove-AzTimeSeriesInsightsAccessPolicy
 
 ## SYNOPSIS
-Deletes the event source with the specified name in the specified subscription, resource group, and environment
+Deletes the access policy with the specified name in the specified subscription, resource group, and environment
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
  [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-AzTimeSeriesInsightsEventSource -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes the event source with the specified name in the specified subscription, resource group, and environment
+Deletes the access policy with the specified name in the specified subscription, resource group, and environment
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Remove a specified access policy by name
 ```powershell
-Remove-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -Name iots001 -ResourceGroupName testgroup
+PS C:\> Remove-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
+
 ```
 
+This command removes a specified access policy.
 
-
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Remove a specified access policy by object
 ```powershell
-$es = Get-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -ResourceGroupName testgroup -Name iots001
+PS C:\> $policy = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup
+PS C:\> Remove-AzTimeSeriesInsightsAccessPolicy -InputObject $policy
+
 ```
 
-PS C:\\> Remove-AzTimeSeriesInsightsEventSource -InputObject $es
+This command removes a specified access policy.
 
 ## PARAMETERS
 
@@ -95,12 +98,12 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights event source associated with the specified environment.
+The name of the Time Series Insights access policy associated with the specified environment.
 
 ```yaml
 Type: System.String
 Parameter Sets: Delete
-Aliases: EventSourceName
+Aliases: AccessPolicyName
 
 Required: True
 Position: Named
