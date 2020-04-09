@@ -1,45 +1,69 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsaccesspolicy
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/get-aztimeseriesinsightsaccesspolicy
 schema: 2.0.0
 ---
 
-# Update-AzTimeSeriesInsightsAccessPolicy
+# Get-AzTimeSeriesInsightsAccessPolicy
 
 ## SYNOPSIS
-Updates the access policy with the specified name in the specified subscription, resource group, and environment.
+Gets the access policy with the specified name in the specified environment.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### List (Default)
 ```
-Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-Description <String>] [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### Get
 ```
-Update-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity> [-Description <String>]
- [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates the access policy with the specified name in the specified subscription, resource group, and environment.
+Gets the access policy with the specified name in the specified environment.
 
 ## EXAMPLES
 
-### Example 1: Update a specified access policy
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup -Role Contributor,Reader
+Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -ResourceGroupName testgroup
+```
 
 Name      Type
 ----      ----
 policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
+policy002 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -ResourceGroupName testgroup -Name policy001
 ```
 
-This command updates a specified access policy.
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+$ap = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsi-envv8u56x -ResourceGroupName tsi-test-i01k5l -Name tsi-apilgj5y
+```
+
+PS C:\\>Get-AzTimeSeriesInsightsAccessPolicy -InputObject $ap
+
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
 
 ## PARAMETERS
 
@@ -59,28 +83,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -Description
-An description of the access policy.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
 ### -EnvironmentName
 The name of the Time Series Insights environment associated with the specified resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -97,7 +105,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: UpdateViaIdentityExpanded
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -113,7 +121,7 @@ The name of the Time Series Insights access policy associated with the specified
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get
 Aliases: AccessPolicyName
 
 Required: True
@@ -129,26 +137,10 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Role
-The list of roles the principal is assigned on the environment.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Support.AccessPolicyRole[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -160,46 +152,13 @@ Dynamic: False
 Azure Subscription ID.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False

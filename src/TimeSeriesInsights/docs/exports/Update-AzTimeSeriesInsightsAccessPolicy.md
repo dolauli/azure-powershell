@@ -1,41 +1,54 @@
 ---
 external help file:
 Module Name: Az.TimeSeriesInsights
-online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/remove-aztimeseriesinsightseventsource
+online version: https://docs.microsoft.com/en-us/powershell/module/az.timeseriesinsights/update-aztimeseriesinsightsaccesspolicy
 schema: 2.0.0
 ---
 
-# Remove-AzTimeSeriesInsightsEventSource
+# Update-AzTimeSeriesInsightsAccessPolicy
 
 ## SYNOPSIS
-Deletes the event source with the specified name in the specified subscription, resource group, and environment
+Updates the access policy with the specified name in the specified subscription, resource group, and environment.
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded (Default)
 ```
-Remove-AzTimeSeriesInsightsEventSource -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Description <String>] [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### UpdateViaIdentityExpanded
 ```
-Remove-AzTimeSeriesInsightsEventSource -InputObject <ITimeSeriesInsightsIdentity> [-DefaultProfile <PSObject>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzTimeSeriesInsightsAccessPolicy -InputObject <ITimeSeriesInsightsIdentity> [-Description <String>]
+ [-Role <AccessPolicyRole[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes the event source with the specified name in the specified subscription, resource group, and environment
+Updates the access policy with the specified name in the specified subscription, resource group, and environment.
 
 ## EXAMPLES
 
-### Example 1: Remove a specified event source
+### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-PS C:\> Remove-AzTimeSeriesInsightsEventSource -EnvironmentName tsitest001 -Name iots001 -ResourceGroupName testgroup
-
+Update-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -Name policy001 -ResourceGroupName testgroup -Role Contributor,Reader
 ```
 
-This removes a specific event source.
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+$policy = Get-AzTimeSeriesInsightsAccessPolicy -EnvironmentName tsitest001 -ResourceGroupName $env.resourceGroup -Name policy001
+```
+
+PS C:\\> Update-AzTimeSeriesInsightsAccessPolicy -InputObject $policy -Role Contributor
+
+Name      Type
+----      ----
+policy001 Microsoft.TimeSeriesInsights/Environments/AccessPolicies
 
 ## PARAMETERS
 
@@ -55,12 +68,28 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
+### -Description
+An description of the access policy.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
 ### -EnvironmentName
 The name of the Time Series Insights environment associated with the specified resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -77,7 +106,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.ITimeSeriesInsightsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -89,30 +118,14 @@ Dynamic: False
 ```
 
 ### -Name
-The name of the Time Series Insights event source associated with the specified environment.
+The name of the Time Series Insights access policy associated with the specified environment.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: EventSourceName
+Parameter Sets: UpdateExpanded
+Aliases: AccessPolicyName
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -125,10 +138,26 @@ Name of an Azure Resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Role
+The list of roles the principal is assigned on the environment.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Support.AccessPolicyRole[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -141,7 +170,7 @@ Azure Subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -194,7 +223,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.TimeSeriesInsights.Models.Api20180815Preview.IAccessPolicyResource
 
 ## ALIASES
 
