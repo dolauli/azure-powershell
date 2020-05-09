@@ -9,7 +9,6 @@ https://docs.microsoft.com/en-us/powershell/module/az.appconfiguration/update-az
 function Update-AzAppConfigurationStore {
 [OutputType('Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20190201Preview.IConfigurationStore')]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-[Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Profile('latest-2019-04-30')]
 [Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Description('Updates a configuration store with the specified parameters.')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory, HelpMessage='The name of the configuration store.')]
