@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Test availability of the application configuration store name
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Test-AzAppConfigurationStoreNameAvailability -Name appconfig-test01
 
-{{ Add output here }}
+Message                               NameAvailable Reason
+-------                               ------------- ------
+The specified name is already in use. False         AlreadyExists
+
+PS C:\> Test-AzAppConfigurationStoreNameAvailability -Name asxmd-asd
+
+Message                          NameAvailable Reason
+-------                          ------------- ------
+The specified name is available. True
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command test availability of the application configuration store name.

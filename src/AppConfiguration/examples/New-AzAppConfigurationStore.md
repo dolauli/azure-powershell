@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create an app configuration 
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> New-AzAppConfigurationStore -Name appconfig-test03 -ResourceGroupName lucas-manual-test -Location eastus
 
-{{ Add output here }}
+Location Name             Type
+-------- ----             ----
+eastus   appconfig-test03 Microsoft.AppConfiguration/configurationStores
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command creates an app configuration.
