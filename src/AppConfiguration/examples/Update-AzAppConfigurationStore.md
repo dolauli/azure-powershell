@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Update an app configuration 
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Update-AzAppConfigurationStore -Name appconfig-test01 -ResourceGroupName lucas-manual-test -SubscriptionId 9e223dbe-3399-4e19-88eb-0975f02ac87f
 
-{{ Add output here }}
+Location Name             Type
+-------- ----             ----
+eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
 ```
 
-{{ Add description here }}
+This command updates an app configuration.
 
-### Example 2: {{ Add title here }}
+### Example 2: Update an app configuration 
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> $app = Get-AzAppConfigurationStore -Name appconfig-test01 -ResourceGroupName lucas-manual-test
+PS C:\>Update-AzAppConfigurationStore -InputObject $app
 
-{{ Add output here }}
+Location Name             Type
+-------- ----             ----
+eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
 ```
 
-{{ Add description here }}
-
+This command updates an app configuration.
