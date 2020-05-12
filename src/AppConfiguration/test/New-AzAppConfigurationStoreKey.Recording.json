@@ -1,0 +1,198 @@
+{
+  "New-AzAppConfigurationStoreKey+[NoContext]+RegenerateExpanded+$POST+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "18" ],
+        "x-ms-client-request-id": [ "83521d32-9d04-4511-a2a3-310ccf2cbd1e" ],
+        "CommandName": [ "Get-AzAppConfigurationStoreKey" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStoreKey_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073504Z:4a56b8fa-fcfc-4f15-a1be-1891317d6565" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1197" ],
+        "x-ms-request-id": [ "5878522d-5bd7-4098-a3e0-61d9f8d573a0" ],
+        "x-ms-correlation-request-id": [ "4a56b8fa-fcfc-4f15-a1be-1891317d6565" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 07:35:04 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1349" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[{\"id\":\"4QT7-l0-s0:n8qsMNyCF3s8rH/xf1J7\",\"name\":\"Primary\",\"value\":\"8ZAWo19YiMc/KvNJH69q7/TCzm7LoPWrRzuBzwbGSgE=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=4QT7-l0-s0:n8qsMNyCF3s8rH/xf1J7;Secret=8ZAWo19YiMc/KvNJH69q7/TCzm7LoPWrRzuBzwbGSgE=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":false},{\"id\":\"dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf\",\"name\":\"Secondary\",\"value\":\"nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf;Secret=nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":false},{\"id\":\"g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV\",\"name\":\"Primary Read Only\",\"value\":\"PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV;Secret=PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true},{\"id\":\"cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/\",\"name\":\"Secondary Read Only\",\"value\":\"9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/;Secret=9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true}],\"nextLink\":null}"
+    }
+  },
+  "New-AzAppConfigurationStoreKey+[NoContext]+RegenerateExpanded+$POST+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/RegenerateKey?api-version=2019-02-01-preview+2": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/RegenerateKey?api-version=2019-02-01-preview",
+      "Content": "{\n  \"id\": \"4QT7-l0-s0:n8qsMNyCF3s8rH/xf1J7\"\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "45" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073505Z:d48fac2b-7a98-41e8-ac9d-6e644606fd24" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1196" ],
+        "x-ms-request-id": [ "fea7c7da-d5db-4532-a02a-9020291d3542" ],
+        "x-ms-correlation-request-id": [ "d48fac2b-7a98-41e8-ac9d-6e644606fd24" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 07:35:04 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "324" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"id\":\"2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ\",\"name\":\"Primary\",\"value\":\"TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ;Secret=TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"lastModified\":\"2020-05-12T07:35:05+00:00\",\"readOnly\":false}"
+    }
+  },
+  "New-AzAppConfigurationStoreKey+[NoContext]+RegenerateExpanded+$POST+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview+3": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "20" ],
+        "x-ms-client-request-id": [ "5150417f-c8f1-4f76-8660-8adf2d37b090" ],
+        "CommandName": [ "Get-AzAppConfigurationStoreKey" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStoreKey_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073505Z:6976f90a-a5ba-4bc0-b72c-560935dd3b51" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1195" ],
+        "x-ms-request-id": [ "32d082f1-885f-4a57-ae44-0eeaad16645b" ],
+        "x-ms-correlation-request-id": [ "6976f90a-a5ba-4bc0-b72c-560935dd3b51" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 07:35:05 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1349" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[{\"id\":\"dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf\",\"name\":\"Secondary\",\"value\":\"nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf;Secret=nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":false},{\"id\":\"g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV\",\"name\":\"Primary Read Only\",\"value\":\"PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV;Secret=PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true},{\"id\":\"cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/\",\"name\":\"Secondary Read Only\",\"value\":\"9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/;Secret=9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true},{\"id\":\"2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ\",\"name\":\"Primary\",\"value\":\"TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ;Secret=TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"lastModified\":\"2020-05-12T07:35:05+00:00\",\"readOnly\":false}],\"nextLink\":null}"
+    }
+  },
+  "New-AzAppConfigurationStoreKey+[NoContext]+RegenerateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc?api-version=2019-02-01-preview+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "21" ],
+        "x-ms-client-request-id": [ "dac96e33-105e-4212-acef-da017c68ce9b" ],
+        "CommandName": [ "Get-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStore_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "ETag": [ "W/\"02001633-0000-0100-0000-5eba51a90000\"" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073505Z:8ec15f6c-0402-47dd-b9d4-03d2bef42d8b" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11963" ],
+        "x-ms-request-id": [ "42c3fcb0-a220-4e57-a779-3fea8940a589" ],
+        "x-ms-correlation-request-id": [ "8ec15f6c-0402-47dd-b9d4-03d2bef42d8b" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 07:35:05 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "413" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Succeeded\",\"creationDate\":\"2020-05-12T07:34:58+00:00\",\"endpoint\":\"https://appconf-po60kc.azconfig.io\"},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc\",\"name\":\"appconf-po60kc\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  },
+  "New-AzAppConfigurationStoreKey+[NoContext]+RegenerateViaIdentityExpanded+$POST+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview+2": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-fed3x8/providers/Microsoft.AppConfiguration/configurationStores/appconf-po60kc/ListKeys?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "22" ],
+        "x-ms-client-request-id": [ "a3e997d3-5366-45df-bf8c-ad36dc280f36" ],
+        "CommandName": [ "Get-AzAppConfigurationStoreKey" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStoreKey_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073506Z:00976859-f87a-4da7-8836-d12e0ae3e7e9" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1194" ],
+        "x-ms-request-id": [ "f2b575cc-6d7d-4028-853c-159ca582f40d" ],
+        "x-ms-correlation-request-id": [ "00976859-f87a-4da7-8836-d12e0ae3e7e9" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 07:35:05 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1349" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[{\"id\":\"dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf\",\"name\":\"Secondary\",\"value\":\"nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=dk/i-l0-s0:JYBHxBh1KseqwcFe0WPf;Secret=nhmlV3oaq5bDGW6sTeYOYV1penKho/M3u14oknLVYds=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":false},{\"id\":\"g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV\",\"name\":\"Primary Read Only\",\"value\":\"PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=g2H3-l0-s0:8/0NSPO+EkxRC1P+j/kV;Secret=PCB9YCIw76obMfuz1eybZC5w7feW1rJAclpGe/m/Bkc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true},{\"id\":\"cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/\",\"name\":\"Secondary Read Only\",\"value\":\"9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=cX1y-l0-s0:YyYsX2gqSD5sJOI7Nnn/;Secret=9jFubyYV9kluZkF8TWusR1WCD7MlxUXyh3tpT2sZwuc=\",\"lastModified\":\"2020-05-12T07:34:57+00:00\",\"readOnly\":true},{\"id\":\"2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ\",\"name\":\"Primary\",\"value\":\"TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"connectionString\":\"Endpoint=https://appconf-po60kc.azconfig.io;Id=2Acf-l0-s0:egOWSIIJ0f4WgOV5iZaZ;Secret=TqFKokqmlErmbww3UliUdWhnMRgmV/51Vvb14Br6+0E=\",\"lastModified\":\"2020-05-12T07:35:05+00:00\",\"readOnly\":false}],\"nextLink\":null}"
+    }
+  }
+}
