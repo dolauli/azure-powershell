@@ -1,0 +1,43 @@
+{
+  "Update-AzAppConfigurationStore+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "36" ],
+        "x-ms-client-request-id": [ "5389ca61-ac99-4a4f-aa5d-76d4a6ff630d" ],
+        "CommandName": [ "Get-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStore_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "ETag": [ "W/\"0300c70b-0000-0100-0000-5eba66eb0000\"" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090600Z:60d17a31-28ce-4fff-9811-075ddda9dcd2" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11970" ],
+        "x-ms-request-id": [ "2789f4e5-a601-45e0-ad4e-266a6c6b689d" ],
+        "x-ms-correlation-request-id": [ "60d17a31-28ce-4fff-9811-075ddda9dcd2" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:59 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "413" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Succeeded\",\"creationDate\":\"2020-05-12T09:05:47+00:00\",\"endpoint\":\"https://appconf-6imdr1.azconfig.io\"},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1\",\"name\":\"appconf-6imdr1\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  }
+}
