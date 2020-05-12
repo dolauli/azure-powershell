@@ -3,7 +3,7 @@
     "Request": {
       "Method": "POST",
       "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/checkNameAvailability?api-version=2019-02-01-preview",
-      "Content": "{\n  \"name\": \"appconf-az3xge\",\n  \"type\": \"Microsoft.AppConfiguration/configurationStores\"\n}",
+      "Content": "{\n  \"name\": \"appconf-6imdr1\",\n  \"type\": \"Microsoft.AppConfiguration/configurationStores\"\n}",
       "Headers": {
       },
       "ContentHeaders": {
@@ -16,14 +16,14 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "x-ms-ratelimit-remaining-subscription-reads": [ "11955" ],
-        "x-ms-request-id": [ "4d1042f6-6306-4ca6-9d93-c087823c49b5" ],
-        "x-ms-correlation-request-id": [ "c1b826b1-7d6b-43f2-8cd4-5b06807cb7c4" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11972" ],
+        "x-ms-request-id": [ "b2f39321-ebef-4d35-9258-b5839e8398fa" ],
+        "x-ms-correlation-request-id": [ "92b6da27-1c1a-42ce-987e-abd85ca6f7f5" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "Server": [ "openresty/1.15.8.1" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073543Z:c1b826b1-7d6b-43f2-8cd4-5b06807cb7c4" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090559Z:92b6da27-1c1a-42ce-987e-abd85ca6f7f5" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Tue, 12 May 2020 07:35:42 GMT" ]
+        "Date": [ "Tue, 12 May 2020 09:05:58 GMT" ]
       },
       "ContentHeaders": {
         "Content-Length": [ "98" ],
@@ -50,14 +50,14 @@
       "Headers": {
         "Cache-Control": [ "no-cache" ],
         "Pragma": [ "no-cache" ],
-        "x-ms-ratelimit-remaining-subscription-reads": [ "11954" ],
-        "x-ms-request-id": [ "141e3c5f-abf7-4080-aad9-b470dbe0084f" ],
-        "x-ms-correlation-request-id": [ "44064f40-b772-4d41-a6d1-fbfc91dc23ac" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11971" ],
+        "x-ms-request-id": [ "73c20ffe-bce9-4959-9ba1-796a72ec169c" ],
+        "x-ms-correlation-request-id": [ "1ba96bf0-e7e3-43a7-9fe9-5408dd851bd3" ],
         "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
         "Server": [ "openresty/1.15.8.1" ],
-        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T073543Z:44064f40-b772-4d41-a6d1-fbfc91dc23ac" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090559Z:1ba96bf0-e7e3-43a7-9fe9-5408dd851bd3" ],
         "X-Content-Type-Options": [ "nosniff" ],
-        "Date": [ "Tue, 12 May 2020 07:35:42 GMT" ]
+        "Date": [ "Tue, 12 May 2020 09:05:59 GMT" ]
       },
       "ContentHeaders": {
         "Content-Length": [ "81" ],

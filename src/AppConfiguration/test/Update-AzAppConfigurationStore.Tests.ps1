@@ -13,13 +13,15 @@ while(-not $mockingPath) {
 
 Describe 'Update-AzAppConfigurationStore' {
     It 'UpdateExpanded' {
-        $appconf = Update-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup -SubscriptionId $env.SubscriptionId
-        $appConf.Name | Should -Be $env.appconfName03
+        Update-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup -SubscriptionId $env.SubscriptionId -Tag @{'key'=1}
+        $appconf = Get-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup 
+        $appconf.Tag.Values | Should -Be 1
     }
 
     It 'UpdateViaIdentityExpanded' {
-        $appConf = Get-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup
-        $appconf = Update-AzAppConfigurationStore -InputObject $appConf
-        $appConf.Name | Should -Be $env.appconfName03
+        $appConf = Get-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup 
+        Update-AzAppConfigurationStore -InputObject $appConf -Tag @{'key'=2}
+        $appconf = Get-AzAppConfigurationStore -Name $env.appconfName03 -ResourceGroupName $env.resourceGroup 
+        $appconf.Tag.Values | Should -Be 2
     }
 }
