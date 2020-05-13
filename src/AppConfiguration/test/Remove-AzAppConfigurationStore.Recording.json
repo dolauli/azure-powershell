@@ -1,0 +1,430 @@
+{
+  "Remove-AzAppConfigurationStore+[NoContext]+Delete+$DELETE+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-ybt6dj?api-version=2019-02-01-preview+1": {
+    "Request": {
+      "Method": "DELETE",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-ybt6dj?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "23" ],
+        "x-ms-client-request-id": [ "d17435b9-24cd-4bda-b770-f57eca114be0" ],
+        "CommandName": [ "Remove-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Remove-AzAppConfigurationStore_Delete" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-deletes": [ "14998" ],
+        "x-ms-request-id": [ "a4ed3616-1b72-4a07-b768-83d166268805" ],
+        "x-ms-correlation-request-id": [ "f2f86a73-a0d1-4a14-a3b1-691678acabfe" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090527Z:f2f86a73-a0d1-4a14-a3b1-691678acabfe" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:26 GMT" ]
+      },
+      "ContentHeaders": {
+        "Expires": [ "-1" ],
+        "Content-Length": [ "0" ]
+      },
+      "Content": null
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+Delete+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores?api-version=2019-02-01-preview+2": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "24" ],
+        "x-ms-client-request-id": [ "c04a9963-f2c8-4e2c-88a2-a6755df278b4" ],
+        "CommandName": [ "Get-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStore_List1" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11979" ],
+        "x-ms-request-id": [ "6a26bb8b-7abe-4e29-918e-cd5b0dc26149" ],
+        "x-ms-correlation-request-id": [ "6a26bb8b-7abe-4e29-918e-cd5b0dc26149" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090527Z:6a26bb8b-7abe-4e29-918e-cd5b0dc26149" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:26 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ],
+        "Content-Length": [ "12" ]
+      },
+      "Content": "{\"value\":[]}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$PUT+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview+1": {
+    "Request": {
+      "Method": "PUT",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview",
+      "Content": "{\n  \"location\": \"eastus\"\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "26" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Retry-After": [ "10" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1196" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/c864806c-524c-3540-ba38-1c635e46748a?api-version=2019-02-01-preview" ],
+        "x-ms-request-id": [ "fd0dbb8c-dedf-4dd8-974d-87581c93fe0c" ],
+        "x-ms-correlation-request-id": [ "a3510eb5-a3b4-45f4-acde-c966bdfad4c6" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090531Z:a3510eb5-a3b4-45f4-acde-c966bdfad4c6" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:30 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "388" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Creating\",\"creationDate\":\"2020-05-12T09:05:29.5395898+00:00\",\"endpoint\":null},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9\",\"name\":\"appconf-syiak9\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/c864806c-524c-3540-ba38-1c635e46748a?api-version=2019-02-01-preview+2": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/c864806c-524c-3540-ba38-1c635e46748a?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "25", "26" ],
+        "x-ms-client-request-id": [ "1b23da1f-7c6a-4a3f-9d5c-3a37bb26e7d1", "1b23da1f-7c6a-4a3f-9d5c-3a37bb26e7d1" ],
+        "CommandName": [ "New-AzAppConfigurationStore", "New-AzAppConfigurationStore" ],
+        "FullCommandName": [ "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets", "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11978" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/c864806c-524c-3540-ba38-1c635e46748a?api-version=2019-02-01-preview" ],
+        "x-ms-request-id": [ "2cfcd5e3-12ad-4f53-b24b-d49ebe4cb07f" ],
+        "x-ms-correlation-request-id": [ "e37d504e-ec61-4dbc-bab2-48b597ca8ddb" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090540Z:e37d504e-ec61-4dbc-bab2-48b597ca8ddb" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:39 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "248" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/c864806c-524c-3540-ba38-1c635e46748a\",\"name\":\"c864806c-524c-3540-ba38-1c635e46748a\",\"status\":\"Succeeded\",\"error\":null}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview+3": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "25", "26", "27" ],
+        "x-ms-client-request-id": [ "1b23da1f-7c6a-4a3f-9d5c-3a37bb26e7d1", "1b23da1f-7c6a-4a3f-9d5c-3a37bb26e7d1", "1b23da1f-7c6a-4a3f-9d5c-3a37bb26e7d1" ],
+        "CommandName": [ "New-AzAppConfigurationStore", "New-AzAppConfigurationStore", "New-AzAppConfigurationStore" ],
+        "FullCommandName": [ "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets", "__AllParameterSets", "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "ETag": [ "W/\"0300f70a-0000-0100-0000-5eba66d90000\"" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090540Z:8a131432-5431-4b89-afde-8676278ad653" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11977" ],
+        "x-ms-request-id": [ "61df6316-9c56-4b85-8153-1388fa96490e" ],
+        "x-ms-correlation-request-id": [ "8a131432-5431-4b89-afde-8676278ad653" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:40 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "413" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Succeeded\",\"creationDate\":\"2020-05-12T09:05:30+00:00\",\"endpoint\":\"https://appconf-syiak9.azconfig.io\"},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9\",\"name\":\"appconf-syiak9\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview+4": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "28" ],
+        "x-ms-client-request-id": [ "9f3fcf56-6c9e-414b-b798-bc7591619c66" ],
+        "CommandName": [ "Get-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStore_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "ETag": [ "W/\"0300f70a-0000-0100-0000-5eba66d90000\"" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090541Z:4003fc9a-fb88-438a-8c70-6ffd521e491f" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11976" ],
+        "x-ms-request-id": [ "38d981d7-5ddc-4f6e-a643-2ca841423149" ],
+        "x-ms-correlation-request-id": [ "4003fc9a-fb88-438a-8c70-6ffd521e491f" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:40 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "413" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Succeeded\",\"creationDate\":\"2020-05-12T09:05:30+00:00\",\"endpoint\":\"https://appconf-syiak9.azconfig.io\"},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9\",\"name\":\"appconf-syiak9\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$DELETE+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview+5": {
+    "Request": {
+      "Method": "DELETE",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-syiak9?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "29" ],
+        "x-ms-client-request-id": [ "0c57009f-f35d-44d4-b4fd-127becf0243a" ],
+        "CommandName": [ "Remove-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Remove-AzAppConfigurationStore_DeleteViaIdentity" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-deletes": [ "14997" ],
+        "x-ms-request-id": [ "bc5be7f0-4651-4bb1-b524-edeb4702f9c9" ],
+        "x-ms-correlation-request-id": [ "0d83336b-89d2-4cee-8791-210810e2debf" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090543Z:0d83336b-89d2-4cee-8791-210810e2debf" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:43 GMT" ]
+      },
+      "ContentHeaders": {
+        "Expires": [ "-1" ],
+        "Content-Length": [ "0" ]
+      },
+      "Content": null
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores?api-version=2019-02-01-preview+6": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "30" ],
+        "x-ms-client-request-id": [ "b511a6d5-948c-461e-80ad-2471163d088a" ],
+        "CommandName": [ "Get-AzAppConfigurationStore" ],
+        "FullCommandName": [ "Get-AzAppConfigurationStore_List1" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11975" ],
+        "x-ms-request-id": [ "fe50f7af-031e-436b-b383-54aed2bbee8d" ],
+        "x-ms-correlation-request-id": [ "8eb1b33d-2c6c-4a68-89d2-f2ef72179a54" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090544Z:8eb1b33d-2c6c-4a68-89d2-f2ef72179a54" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:43 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "28" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[],\"nextLink\":null}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$PUT+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview+7": {
+    "Request": {
+      "Method": "PUT",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview",
+      "Content": "{\n  \"location\": \"eastus\"\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "26" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Retry-After": [ "10" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1195" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/0ea44a56-1d30-9fa7-c7b4-7b401e800bb9?api-version=2019-02-01-preview" ],
+        "x-ms-request-id": [ "69d81760-5c78-4b0d-a42e-1292db64323c" ],
+        "x-ms-correlation-request-id": [ "89bc62a9-8099-45a5-ae71-ca8cb93c840c" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090548Z:89bc62a9-8099-45a5-ae71-ca8cb93c840c" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:47 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "388" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Creating\",\"creationDate\":\"2020-05-12T09:05:46.7108564+00:00\",\"endpoint\":null},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1\",\"name\":\"appconf-6imdr1\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/0ea44a56-1d30-9fa7-c7b4-7b401e800bb9?api-version=2019-02-01-preview+8": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/0ea44a56-1d30-9fa7-c7b4-7b401e800bb9?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "31", "32" ],
+        "x-ms-client-request-id": [ "1ebaa8c7-540b-43e9-90e8-ac7d8216430d", "1ebaa8c7-540b-43e9-90e8-ac7d8216430d" ],
+        "CommandName": [ "New-AzAppConfigurationStore", "New-AzAppConfigurationStore" ],
+        "FullCommandName": [ "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets", "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11974" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/0ea44a56-1d30-9fa7-c7b4-7b401e800bb9?api-version=2019-02-01-preview" ],
+        "x-ms-request-id": [ "65174a9a-6b72-47f1-9b90-befcb099120a" ],
+        "x-ms-correlation-request-id": [ "9e87d53c-b5be-4a43-ba48-0c2dbdd5dc8a" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090558Z:9e87d53c-b5be-4a43-ba48-0c2dbdd5dc8a" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:57 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "248" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/providers/Microsoft.AppConfiguration/locations/eastus/operationsStatus/0ea44a56-1d30-9fa7-c7b4-7b401e800bb9\",\"name\":\"0ea44a56-1d30-9fa7-c7b4-7b401e800bb9\",\"status\":\"Succeeded\",\"error\":null}"
+    }
+  },
+  "Remove-AzAppConfigurationStore+[NoContext]+DeleteViaIdentity+$GET+https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview+9": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1?api-version=2019-02-01-preview",
+      "Content": null,
+      "Headers": {
+        "x-ms-unique-id": [ "31", "32", "33" ],
+        "x-ms-client-request-id": [ "1ebaa8c7-540b-43e9-90e8-ac7d8216430d", "1ebaa8c7-540b-43e9-90e8-ac7d8216430d", "1ebaa8c7-540b-43e9-90e8-ac7d8216430d" ],
+        "CommandName": [ "New-AzAppConfigurationStore", "New-AzAppConfigurationStore", "New-AzAppConfigurationStore" ],
+        "FullCommandName": [ "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded", "New-AzAppConfigurationStore_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets", "__AllParameterSets", "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview", "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "ETag": [ "W/\"0300c70b-0000-0100-0000-5eba66eb0000\"" ],
+        "Vary": [ "Accept-Encoding" ],
+        "x-ms-routing-request-id": [ "SOUTHEASTASIA:20200512T090558Z:7dc38e4b-eb15-4739-b72a-92ad9689ddc6" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11973" ],
+        "x-ms-request-id": [ "c501508f-5a43-4880-a06d-913342d00d6f" ],
+        "x-ms-correlation-request-id": [ "7dc38e4b-eb15-4739-b72a-92ad9689ddc6" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Server": [ "openresty/1.15.8.1" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Tue, 12 May 2020 09:05:57 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "413" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"type\":\"Microsoft.AppConfiguration/configurationStores\",\"properties\":{\"provisioningState\":\"Succeeded\",\"creationDate\":\"2020-05-12T09:05:47+00:00\",\"endpoint\":\"https://appconf-6imdr1.azconfig.io\"},\"id\":\"/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/appconf-rg-ghd9wo/providers/Microsoft.AppConfiguration/configurationStores/appconf-6imdr1\",\"name\":\"appconf-6imdr1\",\"location\":\"eastus\",\"tags\":{}}"
+    }
+  }
+}
