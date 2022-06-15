@@ -1,0 +1,135 @@
+{
+    "resourceType": "virtualMachineScaleSets/virtualMachines",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/#vm-scale-sets"
+    },
+    "commands": [
+        {
+            "name": "Start-AzVmss",
+            "description": "Starts the VMSS or a set of virtual machines within the VMSS",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/start-azvmss"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-VMScaleSetName] <String>"
+                    },
+                    {
+                        "name": "[[-InstanceId] <String[]>]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command starts a specific set of virtual machines specified by the instance ID string array that belong to the VMSS",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VMScaleSetName",
+                            "value": "[resources().parent.name]"
+                        },
+                        {
+                            "name": "-InstanceId",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Stop-AzVmss",
+            "description": "Stops the VMSS or a set of virtual machines within the VMSS",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/stop-azvmss"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-VMScaleSetName] <String>"
+                    },
+                    {
+                        "name": "[[-InstanceId] <String[]>]"
+                    },
+                    {
+                        "name": "[-Force]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command stops a specific set of virtual machines specified by the instance ID string array that belong to the VMSS",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VMScaleSetName",
+                            "value": "[resources().parent.name]"
+                        },
+                        {
+                            "name": "-InstanceId",
+                            "value": "[resources().name]"
+                        },
+                        {
+                            "name": "-Force",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Restart-AzVmss",
+            "description": "Restarts the VMSS or a virtual machine within the VMSS",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/restart-azvmss"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-VMScaleSetName] <String>"
+                    },
+                    {
+                        "name": "[[-InstanceId] <String[]>]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command restarts a virtual machine that has the instance ID",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VMScaleSetName",
+                            "value": "[resources().parent.name]"
+                        },
+                        {
+                            "name": "-InstanceId",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

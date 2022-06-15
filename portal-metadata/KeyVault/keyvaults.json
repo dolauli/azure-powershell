@@ -1,0 +1,256 @@
+{
+    "resourceType": "vaults",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/#key-vault"
+    },
+    "commands": [
+        {
+            "name": "Get-AzKeyVault",
+            "description": "Get a key vault",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/get-azkeyvault"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[[-VaultName] <String>]"
+                    },
+                    {
+                        "name": "[-Tag <Hashtable>]"
+                    },
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Get a key vault in a resource group",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[resources().subscriptionId]"
+                        },
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VaultName",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Get-AzKeyVault",
+            "description": "Get a deleted vault",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/get-azkeyvault"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    },
+                    {
+                        "name": "[[-VaultName] <String>]"
+                    },
+                    {
+                        "name": "[-Location] <String>"
+                    },
+                    {
+                        "name": "[-InRemovedState]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Get a deleted key vault in a resource group",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[resources().subscriptionId]"
+                        },
+                        {
+                            "name": "-InRemovedState",
+                            "value": null
+                        },
+                        {
+                            "name": "-Location",
+                            "value": "[resources().location]"
+                        },
+                        {
+                            "name": "-VaultName",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Remove-AzKeyVault",
+            "description": "Soft delete a key vault",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/remove-azkeyvault"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    },
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-VaultName] <String>"
+                    },
+                    {
+                        "name": "[[-Location] <String>]"
+                    },
+                    {
+                        "name": "[-Force]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command soft deletes a key vault",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[resources().subscriptionId]"
+                        },
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VaultName",
+                            "value": "[resources().name]"
+                        },
+                        {
+                            "name": "-Location",
+                            "value": "[resources().location]"
+                        },
+                        {
+                            "name": "-Force",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Remove-AzKeyVault",
+            "description": "Purge a key vault",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/remove-azkeyvault"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    },
+                    {
+                        "name": "[-InRemovedState]"
+                    },
+                    {
+                        "name": "[-VaultName] <String>"
+                    },
+                    {
+                        "name": "[[-Location] <String>]"
+                    },
+                    {
+                        "name": "[-Force]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command soft deletes a key vault",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[resources().subscriptionId]"
+                        },
+                        {
+                            "name": "-InRemovedState",
+                            "value": null
+                        },
+                        {
+                            "name": "-VaultName",
+                            "value": "[resources().name]"
+                        },
+                        {
+                            "name": "-Location",
+                            "value": "[resources().location]"
+                        },
+                        {
+                            "name": "-Force",
+                            "value": null
+                        },
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Undo-AzKeyVaultRemoval",
+            "description": "Recovers a deleted key vault into an active state",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/undo-azkeyvaultremoval"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    },
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-VaultName] <String>"
+                    },
+                    {
+                        "name": "[[-Location] <String>]"
+                    },
+                    {
+                        "name": "[-Tag <Hashtable>]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command will recover the key vault that was previously deleted",
+                    "arguments": [
+                        {
+                            "name": "-subscription",
+                            "value": "[resources().subscriptionId]"
+                        },
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-VaultName",
+                            "value": "[resources().name]"
+                        },
+                        {
+                            "name": "-Location",
+                            "value": "[resources().location]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

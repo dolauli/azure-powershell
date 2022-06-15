@@ -1,0 +1,162 @@
+{
+    "resourceType": "snapshots",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/vm-snapshots"
+    },
+    "commands": [
+        {
+            "name": "Get-AzSnapshot",
+            "description": "Gets the properties of a snapshot",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azsnapshot"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-SnapshotName] <String>"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command gets the properties of the snapshot",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-SnapshotName",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Remove-AzSnapshot",
+            "description": "Removes a snapshot",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/remove-azsnapshot"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-SnapshotName] <String>"
+                    },
+                    {
+                        "name": "[-Force]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "This command removes the snapshot",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-SnapshotName",
+                            "value": "[resources().name]"
+                        }
+                        ,
+                        {
+                            "name": "-Force",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Grant-AzSnapshotAccess",
+            "description": "Grants an access to a snapshot",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/grant-azsnapshotaccess"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-SnapshotName] <String>"
+                    },
+                    {
+                        "name": "[-Access] <String>"
+                    },
+                    {
+                        "name": "[[-DurationInSecond] <Int32>]"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Grant access to your snapshot",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-SnapshotName",
+                            "value": "[resources().name]"
+                        },
+                        {
+                            "name": "-Access",
+                            "value": "***TBD***"
+                        },
+                        {
+                            "name": "-DurationInSecond",
+                            "value": "***TBD***"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Revoke-AzSnapshotAccess",
+            "description": "Revokes an access to a snapshot",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/revoke-azsnapshotaccess"
+                },
+                "arguments": [
+                    {
+                        "name": "[-ResourceGroupName] <String>"
+                    },
+                    {
+                        "name": "[-SnapshotName] <String>"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Revoke the access to the snapshot",
+                    "arguments": [
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[resources().resourceGroupName]"
+                        },
+                        {
+                            "name": "-SnapshotName",
+                            "value": "[resources().name]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
