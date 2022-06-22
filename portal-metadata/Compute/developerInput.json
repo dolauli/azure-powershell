@@ -1,0 +1,21 @@
+{
+    "resourceType": "workspaces",
+    "apiVersion": "2021-04-01-preview",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/powershell/module/az.databricks"
+    },
+    "pathParameters": [
+        {"swaggerName": "subscriptionId",
+         "cmdletParameter": ["SubscriptionId"]
+        },
+        {"swaggerName": "resourceGroupName",
+         "cmdletParameter": ["ResourceGroupName"]
+        },
+        {"swaggerName": "workspaceName",
+         "cmdletParameter": ["Name"]
+        }
+    ],
+    "commands": [
+        "Get-AzDatabricksWorkspace", "Remove-AzDatabricksWorkspace"
+    ]
+}

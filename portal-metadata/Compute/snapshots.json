@@ -1,7 +1,7 @@
 {
     "resourceType": "snapshots",
     "learnMore": {
-        "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/vm-snapshots"
+        "url": "https://docs.microsoft.com/en-us/powershell/module/az.compute/#vm-snapshots"
     },
     "commands": [
         {

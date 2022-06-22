@@ -1,0 +1,90 @@
+{
+    "resourceType": "workspaces",
+    "apiVersion": "2021-04-01-preview",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/powershell/module/az.databricks"
+    },
+    "commands": [
+        {
+            "name": "Get-AzDatabricksWorkspace",
+            "description": "Gets the workspace.",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/powershell/module/az.databricks/get-azdatabricksworkspace"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String[]>]"
+                    },
+                    {
+                        "name": "-ResourceGroupName <String>"
+                    },
+                    {
+                        "name": "-Name <String>"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Gets the workspace.",
+                    "path":"",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-Name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Remove-AzDatabricksWorkspace",
+            "description": "Deletes the workspace.",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/powershell/module/az.databricks/remove-azdatabricksworkspace"
+                },
+                "arguments": [
+                    {
+                        "name": "[-SubscriptionId <String>]"
+                    },
+                    {
+                        "name": "-ResourceGroupName <String>"
+                    },
+                    {
+                        "name": "-Name <String>"
+                    }
+                ]
+            },
+            "examples": [
+                {
+                    "description": "Deletes the workspace.",
+                    "arguments": [
+                        {
+                            "name": "-SubscriptionId",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "-ResourceGroupName",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-Name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

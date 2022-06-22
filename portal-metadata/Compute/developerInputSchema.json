@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "properties": {
+      "resourceType": {
+        "type": "string"
+      },
+      "apiVersion": {
+        "type": "string"
+      },
+      "learnMore": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "pathParameters": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "swaggerName": {
+              "type": "string"
+            },
+            "cmdletParameter": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "swaggerName",
+            "cmdletParameter"
+          ]
+        }
+      },
+      "commands": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "resourceType",
+      "apiVersion",
+      "pathParameters",
+      "commands"
+    ]
+  }
