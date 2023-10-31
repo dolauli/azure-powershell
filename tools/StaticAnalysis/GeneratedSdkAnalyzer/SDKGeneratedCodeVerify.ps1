@@ -41,7 +41,8 @@ $skipModules = @(
     'Az.Search',
     'Az.Security',
     'Az.Sql',
-    'Az.TrafficManager'
+    'Az.TrafficManager',
+    'Az.Network'
 )
 
 $MissReadMe = 9000
