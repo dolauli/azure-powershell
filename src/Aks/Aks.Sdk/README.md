@@ -17,7 +17,8 @@ clear-output-folder: true
 openapi-type: arm
 azure-arm: true
 license-header: MICROSOFT_MIT_NO_VERSION
-payload-flattening-threshold: 1
+use-extension:
+  "@autorest/powershell": "4.0.631"
 ```
 
 ###
